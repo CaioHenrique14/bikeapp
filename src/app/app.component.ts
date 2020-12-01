@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-root',
@@ -30,31 +30,17 @@ export class AppComponent implements OnInit {
     {
       title: 'Sair',
       url: '/login',
-      icon: 'logout'
+      icon: 'log-out'
     }
-    // ,
-    // {
-    //   title: 'Archived',
-    //   url: '/folder/Archived',
-    //   icon: 'archive'
-    // },
-    // {
-    //   title: 'Trash',
-    //   url: '/folder/Trash',
-    //   icon: 'trash'
-    // },
-    // {
-    //   title: 'Spam',
-    //   url: '/folder/Spam',
-    //   icon: 'warning'
-    // }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  user: any;
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private storage: Storage
   ) {
     this.initializeApp();
   }
@@ -64,12 +50,14 @@ export class AppComponent implements OnInit {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+   this.user = await this.storage.get('user');
   }
 }

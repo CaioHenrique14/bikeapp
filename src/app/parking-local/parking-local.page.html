@@ -1,16 +1,16 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="secondary"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Locais</ion-title>
+    <ion-title color="secondary">Cadastrar locais</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="secondary">
   <div class="content">
     <form [formGroup]="form">
-      <p>Criar conta</p>
+      <p color="dark">Criar Estacionamento</p>
       <ion-item lines="none" class="name">
         <ion-input formControlName="name" type="text" placeholder="Nome">
         </ion-input>
@@ -22,16 +22,16 @@
         <ion-icon name="mail"></ion-icon>
       </ion-item>
       <ion-item lines="none" class="latitude">
-        <ion-input formControlName="latitude" type="text" placeholder="latitude">
+        <ion-input formControlName="latitude" type="text" placeholder="latitude" disabled>
         </ion-input>
         <ion-icon name="call"></ion-icon>
       </ion-item>
       <ion-item lines="none" class="longitude">
-        <ion-input formControlName="longitude" type="text" placeholder="longitude"></ion-input>
+        <ion-input formControlName="longitude" type="text" placeholder="longitude" disabled></ion-input>
         <ion-icon name="lock-closed"></ion-icon>
       </ion-item>
       <div class="btn">
-        <ion-button [disabled]="!form.valid" (click)="register()">Cadastrar</ion-button>
+        <ion-button [disabled]="!form.valid" (click)="register()" color="dark">Cadastrar</ion-button>
     </div>
     </form>
   </div>

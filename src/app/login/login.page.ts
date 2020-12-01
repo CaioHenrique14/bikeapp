@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LoadingController, ToastController, AlertController } from '@ionic/angular';
 import { RestService } from '../services/rest.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginPage implements OnInit {
     private router: Router,
     public loadingController: LoadingController,
     public toastController: ToastController,
-    public restService: RestService
+    public restService: RestService,
+    private storage: Storage
   ) { }
 
   ngOnInit() {
@@ -45,11 +47,23 @@ export class LoginPage implements OnInit {
       email: this.formLogin.get('email').value,
       password: this.formLogin.get('senha').value
     }
+
+    console.log(this.formLogin.get('toggle').value)
+    if(this.formLogin.get('toggle').value){
+      this.storage.set('login',body);
+    }
     this.restService.authUser(body).then((res: any) => {
       console.log(res);
+      this.storage.set('user',res);
       this.router.navigate(['/home']);
-    }).catch((err: any) => {
+    }).catch(async (err: any) => {
       console.error(err);
+      const toast = await this.toastController.create({
+        header: 'Falha no login',
+        message: 'Por favor verifique email e ou senha',
+        position: 'top',
+      });
+      toast.present();
     });
     // this.router.navigate(['/initial']);
 

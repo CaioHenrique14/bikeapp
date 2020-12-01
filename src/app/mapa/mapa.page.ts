@@ -30,9 +30,7 @@ export class MapaPage implements OnInit {
     enableHighAccuracy : false
     };
     this.geolocation.getCurrentPosition(this.options).then((pos : Geoposition) => {
-
         this.currentPos = pos;     
-
         console.log(pos);
         this.addMap(pos.coords.latitude,pos.coords.longitude);
 
@@ -43,8 +41,6 @@ export class MapaPage implements OnInit {
 }
 
   addMap(lat, long) {
-
-    
     let latLng = new google.maps.LatLng(lat, long);
     let mapOptions = {
       center: latLng,
@@ -70,6 +66,8 @@ export class MapaPage implements OnInit {
   }
   addMarker(latLng,res) {
     console.log(latLng);
+  
+
     let marker = new google.maps.Marker({
       map: this.map,
       animation: google.maps.Animation.DROP,

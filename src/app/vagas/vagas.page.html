@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Lista de vagas</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title color="secondary">Lista de vagas</ion-title>
     <ion-button slot="start" (click)="closeModal()">
       <ion-icon name="chevron-back"></ion-icon>
     </ion-button>
@@ -8,19 +8,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
+<ion-content color="secondary">
+  <ion-card color="dark">
     <ion-card-header>
       <ion-card-subtitle>{{listParking.description}}</ion-card-subtitle>
       <ion-card-title>{{listParking.name}}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      <div *ngFor="let space of spacesParking">
-        <ion-label>{{space._id}}</ion-label>
-        <ion-toggle *ngIf="space.available" checked disabled></ion-toggle>
-        <ion-toggle *ngIf="!space.available" disabled></ion-toggle>
-      </div>
+        <ion-card *ngFor="let space of spacesParking;let i = index" class="list-vaga">
+          <div class="div-card">
+          <ion-item href="#" class="ion-activated">
+            <div *ngIf="space.available" class="vaga-livre">
+              <ion-icon name="checkmark" slot="start"></ion-icon>
+            </div>
+            <div *ngIf="!space.available" class="vaga-ocupada">
+              <ion-icon name="close" slot="start"></ion-icon>
+            </div>   
+            <ion-label>Vaga {{i}}</ion-label>
+          </ion-item>
+        </div>
+        </ion-card>
     </ion-card-content>
   </ion-card>
 </ion-content>

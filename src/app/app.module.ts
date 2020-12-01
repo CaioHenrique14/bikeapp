@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { Push } from '@ionic-native/push/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-
+import { IonicStorageModule } from '@ionic/storage';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -19,7 +19,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,

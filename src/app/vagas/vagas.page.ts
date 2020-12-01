@@ -18,7 +18,7 @@ export class VagasPage implements OnInit {
   ngOnInit() {
     this.listParking =this.listParking[0]
     console.log(this.listParking);
-    console.log(this.spacesParking.length);  
+    console.log(this.spacesParking);  
     const options: PushOptions = {
       android: {
         sound: 'true',

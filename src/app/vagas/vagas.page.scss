@@ -1,0 +1,51 @@
+.list-vaga{
+    width: 100%;
+}
+.vaga{
+    width: 35%;
+}
+.vaga-toggle{
+    width: 65%;
+}
+
+ion-card.adv-map p {
+    font-size: 0.7em !important;
+  }
+  
+  button[fab].fab-map {
+    top: calc(100% - 35px);
+    z-index: 50;
+  }
+  
+  .item-bold {
+    font-weight: bold;
+  }
+  
+  ion-content.cards-bg {
+    background-color: #f4f4f7;
+  }
+
+  .vaga-livre{
+      width: 40%;
+      font-size: 28px;
+      margin-top: 3%;
+    }
+  .vaga-ocupada{
+    width: 40%;
+    margin-top: 3%;
+    font-size: 28px;
+
+}
+
+.card-content-md {
+    padding-left: unset;
+    padding-right: unset;
+    -webkit-padding-start: 0px;
+    padding-inline-start: 0px; 
+    -webkit-padding-end: 0px; 
+    padding-inline-end: 16px;
+}
+
+.div-card{
+    background-color: red;
+}
