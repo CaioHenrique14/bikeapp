@@ -1,5 +1,7 @@
 {
   "name": "bikeapp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "670456605354",
+    "firebase_url": "https://bikeapp-e5593.firebaseio.com",
+    "project_id": "bikeapp-e5593",
+    "storage_bucket": "bikeapp-e5593.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670456605354:android:edfdd3911ea65b39a9fed3",
+        "android_client_info": {
+          "package_name": "com.br.unifei.bikeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670456605354-pst4f3ff5550i3hi1ktcb8cbvkdd57hl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUbGW8oZNkK_jswjY448gewOjBar_64Vw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670456605354-pst4f3ff5550i3hi1ktcb8cbvkdd57hl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
